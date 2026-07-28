@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpinObject : MonoBehaviour
 {
@@ -6,14 +7,15 @@ public class SpinObject : MonoBehaviour
 
 	void Update()
 	{
-		// Press A or Left Arrow to spin left
-		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+		if (Keyboard.current == null)
+			return;
+
+		if (Keyboard.current.aKey.isPressed)
 		{
 			transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
 		}
 
-		// Press D or Right Arrow to spin right
-		if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+		if (Keyboard.current.dKey.isPressed)
 		{
 			transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 		}
