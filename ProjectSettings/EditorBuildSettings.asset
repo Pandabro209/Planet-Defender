@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Planet defender unity 1.unity
     guid: 92cf8fcd9b38f47468e3732e73dd5ae2
+  - enabled: 1
+    path: Assets/empty, use for whatever.unity
+    guid: fd02f41f689af2041b4aa29e870fed3a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
