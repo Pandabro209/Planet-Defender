@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
     public RectTransform arrow;
 
     public RectTransform playText;
+    public RectTransform upgradesText;
     public RectTransform quitText;
 
     int selected = 0;
@@ -22,7 +23,7 @@ public class MainMenu : MonoBehaviour
         {
             selected++;
 
-            if (selected > 1)
+            if (selected > 2)
                 selected = 0;
 
             UpdateArrow();
@@ -33,10 +34,17 @@ public class MainMenu : MonoBehaviour
         {
             if (selected == 0)
             {
+                // Play
                 SceneManager.LoadScene("Planet defender unity 1");
             }
-            else
+            else if (selected == 1)
             {
+                // Upgrades
+                SceneManager.LoadScene("Upgrades");
+            }
+            else if (selected == 2)
+            {
+                // Quit
                 Application.Quit();
             }
         }
@@ -49,6 +57,13 @@ public class MainMenu : MonoBehaviour
             arrow.position = new Vector3(
                 arrow.position.x,
                 playText.position.y,
+                arrow.position.z);
+        }
+        else if (selected == 1)
+        {
+            arrow.position = new Vector3(
+                arrow.position.x,
+                upgradesText.position.y,
                 arrow.position.z);
         }
         else
