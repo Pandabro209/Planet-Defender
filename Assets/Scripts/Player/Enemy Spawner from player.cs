@@ -5,15 +5,26 @@ public class EnemySpawner : MonoBehaviour
 	public GameObject enemyPrefab;
 
 	public float spawnDistance = 20f;
-	public float spawnRate = 2f;
+
+	[Header("Spawn Rate")]
+	public float startingSpawnRate = 2f;
+	public float minimumSpawnRate = 0.5f;
+	public float difficultySpeed = 0.02f;
 
 	private float timer;
+	private float elapsedTime;
 
 	void Update()
 	{
+		elapsedTime += Time.deltaTime;
 		timer += Time.deltaTime;
 
-		if (timer >= spawnRate)
+		float currentSpawnRate =
+			minimumSpawnRate +
+			(startingSpawnRate - minimumSpawnRate) *
+			Mathf.Exp(-difficultySpeed * elapsedTime);
+
+		if (timer >= currentSpawnRate)
 		{
 			timer = 0f;
 			SpawnEnemy();
@@ -30,7 +41,8 @@ public class EnemySpawner : MonoBehaviour
 			Mathf.Sin(angle * Mathf.Deg2Rad)
 		);
 
-		Vector3 spawnPosition = transform.position + direction * spawnDistance;
+		Vector3 spawnPosition =
+			transform.position + direction * spawnDistance;
 
 		GameObject enemy = Instantiate(
 			enemyPrefab,
