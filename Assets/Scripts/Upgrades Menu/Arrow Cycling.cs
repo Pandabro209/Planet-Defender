@@ -3,86 +3,92 @@ using UnityEngine.SceneManagement;
 
 public class UpgradesMenu : MonoBehaviour
 {
+    [Header("Arrow Indicator")]
     public RectTransform arrow;
 
-    public RectTransform fireRateText;
-    public RectTransform buttonText;
-    public RectTransform mainMenuText;
-    public RectTransform startRunText;
-    public RectTransform bulletSizeText;
+    [Header("Menu Buttons (Assign in sequence)")]
+    public RectTransform fireRateText;  // Index 0 (Top Left)
+    public RectTransform bulletSizeText;// Index 1 (Top Center)
+    public RectTransform buttonText;    // Index 2 (Top Right)
+    public RectTransform mainMenuText;  // Index 3 (Bottom Left)
+    public RectTransform startRunText;  // Index 4 (Bottom Right)
 
-    int selected = 0;
+    [Header("Arrow Offset")]
+    public float xOffset = -80f; // Distance to keep arrow to the LEFT of the target text
 
-    void Start2()
+    private int selected = 0;
+    private const int TOTAL_OPTIONS = 5;
+
+    void Start()
     {
-        UpdateArrow2();
+        if (arrow != null)
+        {
+            arrow.SetAsLastSibling(); // Keeps arrow rendering in front of all buttons
+        }
+
+        UpdateArrowPosition();
     }
 
     void Update()
     {
-        // Move selection
+        // Cycle through options with 'A'
         if (Input.GetKeyDown(KeyCode.A))
         {
-            selected++;
-
-            if (selected > 2)
-                selected = 0;
-
-            UpdateArrow2();
+            selected = (selected + 1) % TOTAL_OPTIONS;
+            UpdateArrowPosition();
         }
 
-        // Confirm selection
+        // Confirm with 'D'
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (selected == 0)
-            {
-                // Play
-                SceneManager.LoadScene("Planet defender unity 1");
-            }
-            else if (selected == 1)
-            {
-                // Upgrades
-                SceneManager.LoadScene("Upgrades");
-            }
+            ExecuteSelection();
         }
     }
 
-    void UpdateArrow2()
+    void UpdateArrowPosition()
     {
-        if (selected == 0)
+        RectTransform target = GetTargetRect();
+
+        if (arrow != null && target != null)
         {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                fireRateText.position.y,
-                arrow.position.z);
+            // Move arrow to target's World Position, offset to the left of the button
+            Vector3 targetWorldPos = target.position;
+            arrow.position = new Vector3(targetWorldPos.x + xOffset, targetWorldPos.y, targetWorldPos.z);
         }
-        else if (selected == 1)
+    }
+
+    RectTransform GetTargetRect()
+    {
+        switch (selected)
         {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                bulletSizeText.position.y,
-                arrow.position.z);
+            case 0: return fireRateText;
+            case 1: return bulletSizeText;
+            case 2: return buttonText;
+            case 3: return mainMenuText;
+            case 4: return startRunText;
+            default: return fireRateText;
         }
-        else if (selected == 2)
+    }
+
+    void ExecuteSelection()
+    {
+        switch (selected)
         {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                buttonText.position.y,
-                arrow.position.z);
-        }
-        else if (selected == 3)
-        {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                mainMenuText.position.y,
-                arrow.position.z);
-        }
-        else
-        {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                startRunText.position.y,
-                arrow.position.z);
+            case 0:
+                Debug.Log("Fire Rate Selected");
+                break;
+            case 1:
+                Debug.Log("Bullet Size Selected");
+                break;
+            case 2:
+                Debug.Log("Button Selected");
+                break;
+            case 3:
+                SceneManager.LoadScene("MainMenu");
+                break;
+            case 4:
+                SceneManager.LoadScene("Planet defender unity 1");
+                break;
         }
     }
 }
