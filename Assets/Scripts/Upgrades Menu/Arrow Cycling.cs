@@ -84,7 +84,7 @@ public class UpgradesMenu : MonoBehaviour
                 Debug.Log("Button Selected");
                 break;
             case 3:
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("Main Menu");
                 break;
             case 4:
                 SceneManager.LoadScene("Planet defender unity 1");
