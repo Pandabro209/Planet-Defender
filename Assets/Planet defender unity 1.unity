@@ -1231,7 +1231,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 35a9be4989f48e246b049e335f23c64d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2562,54 +2562,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1712818847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1712818848}
-  - component: {fileID: 1712818849}
-  m_Layer: 0
-  m_Name: ScoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1712818848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712818847}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1901799245}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1712818849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712818847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ee905e4ab680d42818e729905068e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  score: 0
-  highScore: 0
-  totalPoints: 0
-  scoreText: {fileID: 1962302867}
 --- !u!43 &1738851540
 Mesh:
   m_ObjectHideFlags: 0
@@ -3188,7 +3140,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1712818848}
   - {fileID: 1663965894}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3381,6 +3332,7 @@ GameObject:
   - component: {fileID: 1962302866}
   - component: {fileID: 1962302868}
   - component: {fileID: 1962302867}
+  - component: {fileID: 1962302869}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3507,6 +3459,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962302865}
   m_CullTransparentMesh: 1
+--- !u!114 &1962302869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962302865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785a6b3401d669e4cb9fa5b0140d948d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameScoreUI
+  scoreText: {fileID: 1962302867}
 --- !u!43 &2016448889
 Mesh:
   m_ObjectHideFlags: 0
@@ -3771,7 +3736,7 @@ PrefabInstance:
       objectReference: {fileID: 1738851540}
     - target: {fileID: 3634962936794083052, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_VersionIndex
-      value: 744
+      value: 747
       objectReference: {fileID: 0}
     - target: {fileID: 3904130542038081978, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: difficultySpeed
@@ -3811,7 +3776,7 @@ PrefabInstance:
       objectReference: {fileID: 2016448889}
     - target: {fileID: 5556720391120504205, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_VersionIndex
-      value: 1421
+      value: 1424
       objectReference: {fileID: 0}
     - target: {fileID: 5589513573963954625, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_Mesh
@@ -3819,7 +3784,7 @@ PrefabInstance:
       objectReference: {fileID: 1193028533}
     - target: {fileID: 5589513573963954625, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_VersionIndex
-      value: 730
+      value: 733
       objectReference: {fileID: 0}
     - target: {fileID: 6848101765139064941, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_Mesh
@@ -3827,7 +3792,7 @@ PrefabInstance:
       objectReference: {fileID: 1955256610}
     - target: {fileID: 6848101765139064941, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_VersionIndex
-      value: 820
+      value: 823
       objectReference: {fileID: 0}
     - target: {fileID: 7021387141493647797, guid: 72fd71b4548f6eb4cbd3842c5effbc21, type: 3}
       propertyPath: m_Mesh

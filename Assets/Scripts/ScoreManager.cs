@@ -19,13 +19,30 @@ public class ScoreManager : MonoBehaviour
 
 	private void Awake()
 	{
-		Instance = this;
+		// Make sure there is only one ScoreManager
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
 
-		// Load saved values
-		highScore = PlayerPrefs.GetInt("HighScore", 0);
-		totalPoints = PlayerPrefs.GetInt("TotalPoints", 0);
+			// Load saved values
+			highScore = PlayerPrefs.GetInt("HighScore", 0);
+			totalPoints = PlayerPrefs.GetInt("TotalPoints", 0);
 
-		// Start a new run
+			// Start with a fresh run
+			score = 0;
+		}
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+
+		UpdateScoreUI();
+	}
+
+	public void StartNewRun()
+	{
 		score = 0;
 		UpdateScoreUI();
 	}
@@ -39,7 +56,6 @@ public class ScoreManager : MonoBehaviour
 		{
 			highScore = score;
 			PlayerPrefs.SetInt("HighScore", highScore);
-			PlayerPrefs.Save();
 		}
 
 		UpdateScoreUI();
@@ -53,13 +69,20 @@ public class ScoreManager : MonoBehaviour
 		PlayerPrefs.SetInt("TotalPoints", totalPoints);
 		PlayerPrefs.SetInt("HighScore", highScore);
 
-		// Save immediately
 		PlayerPrefs.Save();
 	}
 
 	private void UpdateScoreUI()
 	{
 		if (scoreText != null)
+		{
 			scoreText.text = "Score: " + score;
+		}
+	}
+
+	public void SetScoreText(TMP_Text newScoreText)
+	{
+		scoreText = newScoreText;
+		UpdateScoreUI();
 	}
 }
