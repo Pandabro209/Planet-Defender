@@ -2314,6 +2314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 10
+  hitSound: {fileID: 8300000, guid: aa91195758675ea43ba654698dbeae3b, type: 3}
 --- !u!135 &4972720644392673973
 SphereCollider:
   m_ObjectHideFlags: 0

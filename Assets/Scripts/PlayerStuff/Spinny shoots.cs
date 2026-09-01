@@ -10,6 +10,9 @@ public class Shooter : MonoBehaviour
 	[Header("Upgrade")]
 	public float fireRateUpgradeMultiplier = 0.9f;
 
+	[Header("Sound Effects")]
+	public AudioClip fireSound;
+
 	private float timer;
 
 
@@ -38,6 +41,12 @@ public class Shooter : MonoBehaviour
 				transform.position,
 				Quaternion.identity
 			);
+
+			// Play firing sound
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(fireSound);
+			}
 
 			Vector3 direction = (
 				transform.position -

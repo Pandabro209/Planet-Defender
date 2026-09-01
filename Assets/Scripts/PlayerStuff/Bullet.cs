@@ -5,6 +5,9 @@ public class Bullet : MonoBehaviour
 {
 	public float speed = 10f;
 
+	[Header("Sound Effects")]
+	public AudioClip hitSound;
+
 	private Vector3 direction;
 
 	private int enemiesHit = 0;
@@ -45,6 +48,12 @@ public class Bullet : MonoBehaviour
 
 		// Remember this enemy
 		hitEnemies.Add(other.gameObject);
+
+		// Play hit sound
+		if (SFXManager.Instance != null)
+		{
+			SFXManager.Instance.PlaySFX(hitSound);
+		}
 
 		// Add score
 		if (ScoreManager.Instance != null)

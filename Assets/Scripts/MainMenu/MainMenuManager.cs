@@ -3,75 +3,81 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public RectTransform arrow;
+	public RectTransform arrow;
 
-    public RectTransform playText;
-    public RectTransform upgradesText;
-    public RectTransform quitText;
+	public RectTransform playText;
+	public RectTransform upgradesText;
+	public RectTransform quitText;
 
-    int selected = 0;
+	int selected = 0;
 
-    void Start()
-    {
-        UpdateArrow();
-    }
+	void Start()
+	{
+		UpdateArrow();
+	}
 
-    void Update()
-    {
-        // Move selection
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            selected++;
+	void Update()
+	{
+		// Move selection
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			selected++;
 
-            if (selected > 2)
-                selected = 0;
+			if (selected > 2)
+				selected = 0;
 
-            UpdateArrow();
-        }
+			UpdateArrow();
+		}
 
-        // Confirm selection
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            if (selected == 0)
-            {
-                // Play
-                SceneManager.LoadScene("Planet defender unity 1");
-            }
-            else if (selected == 1)
-            {
-                // Upgrades
-                SceneManager.LoadScene("Upgrades");
-            }
-            else if (selected == 2)
-            {
-                // Quit
-                Application.Quit();
-            }
-        }
-    }
+		// Confirm selection
+		if (Input.GetKeyDown(KeyCode.D))
+		{
+			if (selected == 0)
+			{
+				// Start a fresh run
+				if (ScoreManager.Instance != null)
+				{
+					ScoreManager.Instance.StartNewRun();
+				}
 
-    void UpdateArrow()
-    {
-        if (selected == 0)
-        {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                playText.position.y,
-                arrow.position.z);
-        }
-        else if (selected == 1)
-        {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                upgradesText.position.y,
-                arrow.position.z);
-        }
-        else
-        {
-            arrow.position = new Vector3(
-                arrow.position.x,
-                quitText.position.y,
-                arrow.position.z);
-        }
-    }
+				// Play
+				SceneManager.LoadScene("Planet defender unity 1");
+			}
+			else if (selected == 1)
+			{
+				// Upgrades
+				SceneManager.LoadScene("Upgrades");
+			}
+			else if (selected == 2)
+			{
+				// Quit
+				Application.Quit();
+			}
+		}
+	}
+
+	void UpdateArrow()
+	{
+		if (selected == 0)
+		{
+			arrow.position = new Vector3(
+				arrow.position.x,
+				playText.position.y,
+				arrow.position.z);
+		}
+		else if (selected == 1)
+		{
+			arrow.position = new Vector3(
+				arrow.position.x,
+				upgradesText.position.y,
+				arrow.position.z);
+		}
+		else
+		{
+			arrow.position = new Vector3(
+				arrow.position.x,
+				quitText.position.y,
+				arrow.position.z);
+		}
+	}
 }

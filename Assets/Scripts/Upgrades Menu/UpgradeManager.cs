@@ -15,7 +15,7 @@ public class UpgradeManager : MonoBehaviour
 
 	[Header("Fire Rate")]
 	public int fireRateLevel = 0;
-	public int fireRateCost = 100;
+	public int fireRateCost = 200;
 
 
 	// =========================================
@@ -24,7 +24,7 @@ public class UpgradeManager : MonoBehaviour
 
 	[Header("Piercing")]
 	public int piercingLevel = 0;
-	public int piercingCost = 100;
+	public int piercingCost = 500;
 
 
 	// =========================================
@@ -33,7 +33,7 @@ public class UpgradeManager : MonoBehaviour
 
 	[Header("Jumpstart")]
 	public int jumpstartLevel = 0;
-	public int jumpstartCost = 100;
+	public int jumpstartCost = 300;
 
 
 	// =========================================
@@ -118,9 +118,9 @@ public class UpgradeManager : MonoBehaviour
 		// Increase level
 		fireRateLevel++;
 
-		// Increase cost by 1.5x
+		// Increase cost by 1.2x
 		fireRateCost =
-			Mathf.RoundToInt(fireRateCost * 1.5f);
+			Mathf.RoundToInt(fireRateCost * 1.2f);
 
 		SaveUpgrades();
 
@@ -222,9 +222,9 @@ public class UpgradeManager : MonoBehaviour
 		// Increase level
 		jumpstartLevel++;
 
-		// Increase cost by 1.5x
+		// Increase cost by 1.2x
 		jumpstartCost =
-			Mathf.RoundToInt(jumpstartCost * 1.5f);
+			Mathf.RoundToInt(jumpstartCost * 1.2f);
 
 		SaveUpgrades();
 
@@ -421,7 +421,7 @@ public class UpgradeManager : MonoBehaviour
 		fireRateCost =
 			PlayerPrefs.GetInt(
 				"FireRateCost",
-				100
+				200
 			);
 
 
@@ -434,7 +434,7 @@ public class UpgradeManager : MonoBehaviour
 		piercingCost =
 			PlayerPrefs.GetInt(
 				"PiercingCost",
-				100
+				500
 			);
 
 
@@ -447,7 +447,7 @@ public class UpgradeManager : MonoBehaviour
 		jumpstartCost =
 			PlayerPrefs.GetInt(
 				"JumpstartCost",
-				100
+				300
 			);
 	}
 
@@ -460,15 +460,15 @@ public class UpgradeManager : MonoBehaviour
 	{
 		// Reset Fire Rate
 		fireRateLevel = 0;
-		fireRateCost = 100;
+		fireRateCost = 200;
 
 		// Reset Piercing
 		piercingLevel = 0;
-		piercingCost = 100;
+		piercingCost = 500;
 
 		// Reset Jumpstart
 		jumpstartLevel = 0;
-		jumpstartCost = 100;
+		jumpstartCost = 300;
 
 
 		// Reset total points

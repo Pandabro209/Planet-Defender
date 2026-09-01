@@ -2795,6 +2795,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   bulletPrefab: {fileID: 8230649508265903553, guid: b4e44d377503dc64880bb4e056cbdea3, type: 3}
   fireRate: 0.5
+  fireRateUpgradeMultiplier: 0.9
+  fireSound: {fileID: 8300000, guid: 41901581d0c6397409a57f0f828e6037, type: 3}
 --- !u!1 &5160715620963398570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,7 +5112,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 8995307741261125345, guid: 55eb4e0e4237b234c93b99fb51c9083f, type: 3}
   spawnDistance: 35
-  spawnRate: 1
+  startingSpawnRate: 2
+  minimumSpawnRate: 0.2
+  difficultySpeed: 0.02
+  secondsPerIntensityLevel: 10
+  enemiesPerSpawnIncreaseTime: 60
+  startingEnemiesPerSpawn: 1
+  initialSetback: 20
+  setbackReductionMultiplier: 0.9
 --- !u!135 &6136804809866822210
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5145,6 +5154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOver
   gameOverCanvas: {fileID: 0}
+  gameOverScoreText: {fileID: 0}
+  gameOverHighScoreText: {fileID: 0}
+  gameOverTotalPointsText: {fileID: 0}
 --- !u!1 &7691892493211553599
 GameObject:
   m_ObjectHideFlags: 0

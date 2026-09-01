@@ -707,7 +707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 200'
+  m_text: 'Cost: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1367,13 +1367,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261c1b0783b0b30469d9f59f477ad340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
-  useInspectorValuesForTesting: 0
-  fireRateLevel: 0
-  fireRateCost: 200
-  piercingLevel: 0
-  piercingCost: 500
-  jumpstartLevel: 0
-  jumpstartCost: 300
+  useInspectorValuesForTesting: 1
+  fireRateLevel: 20
+  fireRateCost: 100
+  piercingLevel: 20
+  piercingCost: 100
+  jumpstartLevel: 100000
+  jumpstartCost: 100
   totalPointsText: {fileID: 1312175468}
   fireRateLevelText: {fileID: 606694928}
   fireRateCostText: {fileID: 533720007}
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 500'
+  m_text: 'Cost: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2265,7 +2265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost: 300'
+  m_text: 'Cost: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

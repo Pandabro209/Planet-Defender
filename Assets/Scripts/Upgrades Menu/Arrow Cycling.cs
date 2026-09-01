@@ -103,6 +103,11 @@ public class UpgradesMenu : MonoBehaviour
 
 			case 4:
 				// Start Run
+				if (ScoreManager.Instance != null)
+				{
+					ScoreManager.Instance.StartNewRun();
+				}
+
 				SceneManager.LoadScene("Planet defender unity 1");
 				break;
 		}
