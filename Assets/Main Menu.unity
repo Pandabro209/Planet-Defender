@@ -2061,8 +2061,8 @@ MonoBehaviour:
   playerDeathSound: {fileID: 8300000, guid: 484a8672c2c50ab489495bcbc1c3d05d, type: 3}
   shootMinimumPitch: 0.9
   shootMaximumPitch: 1.1
-  enemyHitMinimumPitch: 0.5
-  enemyHitMaximumPitch: 2
+  enemyHitMinimumPitch: 0.7
+  enemyHitMaximumPitch: 1.4
 --- !u!1 &1839154481
 GameObject:
   m_ObjectHideFlags: 0
