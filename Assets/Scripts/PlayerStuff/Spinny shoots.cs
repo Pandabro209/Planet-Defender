@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
@@ -9,9 +10,6 @@ public class Shooter : MonoBehaviour
 
 	[Header("Upgrade")]
 	public float fireRateUpgradeMultiplier = 0.9f;
-
-	[Header("Sound Effects")]
-	public AudioClip fireSound;
 
 	private float timer;
 
@@ -42,10 +40,12 @@ public class Shooter : MonoBehaviour
 				Quaternion.identity
 			);
 
-			// Play firing sound
+			// Play firing sound through SFX Manager
 			if (SFXManager.Instance != null)
 			{
-				SFXManager.Instance.PlaySFX(fireSound);
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.shootSound
+				);
 			}
 
 			Vector3 direction = (

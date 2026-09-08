@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using TMPro;
 
@@ -109,6 +110,14 @@ public class UpgradeManager : MonoBehaviour
 		if (ScoreManager.Instance.totalPoints < fireRateCost)
 		{
 			Debug.Log("Not enough points for Fire Rate upgrade!");
+
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.upgradeFailSound
+				);
+			}
+
 			return;
 		}
 
@@ -133,6 +142,14 @@ public class UpgradeManager : MonoBehaviour
 		PlayerPrefs.Save();
 
 		UpdateUpgradeUI();
+
+		// Play successful upgrade SFX
+		if (SFXManager.Instance != null)
+		{
+			SFXManager.Instance.PlaySFX(
+				SFXManager.Instance.upgradeBuySound
+			);
+		}
 
 		Debug.Log(
 			"Fire Rate upgraded to level " +
@@ -161,6 +178,14 @@ public class UpgradeManager : MonoBehaviour
 		if (ScoreManager.Instance.totalPoints < piercingCost)
 		{
 			Debug.Log("Not enough points for Piercing upgrade!");
+
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.upgradeFailSound
+				);
+			}
+
 			return;
 		}
 
@@ -185,6 +210,14 @@ public class UpgradeManager : MonoBehaviour
 		PlayerPrefs.Save();
 
 		UpdateUpgradeUI();
+
+		// Play successful upgrade SFX
+		if (SFXManager.Instance != null)
+		{
+			SFXManager.Instance.PlaySFX(
+				SFXManager.Instance.upgradeBuySound
+			);
+		}
 
 		Debug.Log(
 			"Piercing upgraded to level " +
@@ -213,6 +246,14 @@ public class UpgradeManager : MonoBehaviour
 		if (ScoreManager.Instance.totalPoints < jumpstartCost)
 		{
 			Debug.Log("Not enough points for Jumpstart upgrade!");
+
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.upgradeFailSound
+				);
+			}
+
 			return;
 		}
 
@@ -237,6 +278,14 @@ public class UpgradeManager : MonoBehaviour
 		PlayerPrefs.Save();
 
 		UpdateUpgradeUI();
+
+		// Play successful upgrade SFX
+		if (SFXManager.Instance != null)
+		{
+			SFXManager.Instance.PlaySFX(
+				SFXManager.Instance.upgradeBuySound
+			);
+		}
 
 		Debug.Log(
 			"Jumpstart upgraded to level " +
@@ -331,7 +380,6 @@ public class UpgradeManager : MonoBehaviour
 			fireRateCost
 		);
 
-
 		PlayerPrefs.SetInt(
 			"PiercingLevel",
 			piercingLevel
@@ -341,7 +389,6 @@ public class UpgradeManager : MonoBehaviour
 			"PiercingCost",
 			piercingCost
 		);
-
 
 		PlayerPrefs.SetInt(
 			"JumpstartLevel",
@@ -369,7 +416,6 @@ public class UpgradeManager : MonoBehaviour
 				"TESTING MODE: Using Inspector upgrade values."
 			);
 
-			// Fire Rate
 			PlayerPrefs.SetInt(
 				"FireRateLevel",
 				fireRateLevel
@@ -380,8 +426,6 @@ public class UpgradeManager : MonoBehaviour
 				fireRateCost
 			);
 
-
-			// Piercing
 			PlayerPrefs.SetInt(
 				"PiercingLevel",
 				piercingLevel
@@ -392,8 +436,6 @@ public class UpgradeManager : MonoBehaviour
 				piercingCost
 			);
 
-
-			// Jumpstart
 			PlayerPrefs.SetInt(
 				"JumpstartLevel",
 				jumpstartLevel
@@ -409,9 +451,6 @@ public class UpgradeManager : MonoBehaviour
 			return;
 		}
 
-
-		// Normal mode
-
 		fireRateLevel =
 			PlayerPrefs.GetInt(
 				"FireRateLevel",
@@ -424,7 +463,6 @@ public class UpgradeManager : MonoBehaviour
 				200
 			);
 
-
 		piercingLevel =
 			PlayerPrefs.GetInt(
 				"PiercingLevel",
@@ -436,7 +474,6 @@ public class UpgradeManager : MonoBehaviour
 				"PiercingCost",
 				500
 			);
-
 
 		jumpstartLevel =
 			PlayerPrefs.GetInt(
@@ -458,27 +495,20 @@ public class UpgradeManager : MonoBehaviour
 
 	public void ResetAllProgress()
 	{
-		// Reset Fire Rate
 		fireRateLevel = 0;
 		fireRateCost = 200;
 
-		// Reset Piercing
 		piercingLevel = 0;
 		piercingCost = 500;
 
-		// Reset Jumpstart
 		jumpstartLevel = 0;
 		jumpstartCost = 300;
 
-
-		// Reset total points
 		if (ScoreManager.Instance != null)
 		{
 			ScoreManager.Instance.totalPoints = 0;
 		}
 
-
-		// Delete saved data
 		PlayerPrefs.DeleteKey("FireRateLevel");
 		PlayerPrefs.DeleteKey("FireRateCost");
 
@@ -492,7 +522,6 @@ public class UpgradeManager : MonoBehaviour
 		PlayerPrefs.DeleteKey("HighScore");
 
 		PlayerPrefs.Save();
-
 
 		UpdateUpgradeUI();
 

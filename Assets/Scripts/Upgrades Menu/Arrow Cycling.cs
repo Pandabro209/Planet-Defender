@@ -37,10 +37,26 @@ public class UpgradesMenu : MonoBehaviour
 		{
 			selected = (selected + 1) % TOTAL_OPTIONS;
 			UpdateArrowPosition();
+
+			// Upgrade menu movement sound
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.upgradeMenuMoveSound
+				);
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.D))
 		{
+			// Upgrade menu selection sound
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.upgradeMenuSelectSound
+				);
+			}
+
 			ExecuteSelection();
 		}
 	}

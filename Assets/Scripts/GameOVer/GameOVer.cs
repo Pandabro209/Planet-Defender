@@ -25,6 +25,9 @@ public class GameOver : MonoBehaviour
 			// Save this run's score
 			ScoreManager.Instance.EndRun();
 
+			// Play death SFX
+			SFXManager.Instance.PlaySFX(SFXManager.Instance.playerDeathSound);
+
 			// Show all score information
 			gameOverScoreText.text = "Score: " + ScoreManager.Instance.score;
 			gameOverHighScoreText.text = "High Score: " + ScoreManager.Instance.highScore;

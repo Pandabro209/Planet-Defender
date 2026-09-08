@@ -27,11 +27,27 @@ public class MainMenu : MonoBehaviour
 				selected = 0;
 
 			UpdateArrow();
+
+			// Main menu movement sound
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.mainMenuMoveSound
+				);
+			}
 		}
 
 		// Confirm selection
 		if (Input.GetKeyDown(KeyCode.D))
 		{
+			// Main menu selection sound
+			if (SFXManager.Instance != null)
+			{
+				SFXManager.Instance.PlaySFX(
+					SFXManager.Instance.mainMenuSelectSound
+				);
+			}
+
 			if (selected == 0)
 			{
 				// Start a fresh run

@@ -1,12 +1,10 @@
+
 using UnityEngine;
 using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
 	public float speed = 10f;
-
-	[Header("Sound Effects")]
-	public AudioClip hitSound;
 
 	private Vector3 direction;
 
@@ -49,10 +47,10 @@ public class Bullet : MonoBehaviour
 		// Remember this enemy
 		hitEnemies.Add(other.gameObject);
 
-		// Play hit sound
+		// Play enemy hit SFX through SFX Manager
 		if (SFXManager.Instance != null)
 		{
-			SFXManager.Instance.PlaySFX(hitSound);
+			SFXManager.Instance.PlaySFX(SFXManager.Instance.enemyHitSound);
 		}
 
 		// Add score

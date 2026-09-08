@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   arrow: {fileID: 1077175784}
   playText: {fileID: 1839154482}
-  upgradesText: {fileID: 0}
+  upgradesText: {fileID: 401067617}
   quitText: {fileID: 1049566449}
 --- !u!1 &1023984707
 GameObject:
@@ -1918,7 +1918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379458776}
   - component: {fileID: 1379458775}
-  - component: {fileID: 1379458774}
+  - component: {fileID: 1379458777}
   m_Layer: 0
   m_Name: SFXManager
   m_TagString: Untagged
@@ -1926,18 +1926,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1379458774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379458773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f7db517649c5246a2703a96472046f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SFXManager
 --- !u!82 &1379458775
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2050,6 +2038,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1379458777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379458773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f7db517649c5246a2703a96472046f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXManager
+  upgradeMenuMoveSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
+  upgradeMenuSelectSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
+  mainMenuMoveSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
+  mainMenuSelectSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
+  upgradeBuySound: {fileID: 8300000, guid: da8e9ac5c7253b64a86d1c9052816e5f, type: 3}
+  upgradeFailSound: {fileID: 8300000, guid: 2a5d97a5939098a43b3a108603c158c1, type: 3}
+  shootSound: {fileID: 8300000, guid: 59d1b7a7361ab494eb7f39b941cd3a61, type: 3}
+  enemyHitSound: {fileID: 8300000, guid: 5d8736f5ce126f54391fff3913ff381f, type: 3}
+  playerDeathSound: {fileID: 8300000, guid: 0bbfce111bace574996cd0ddbd77b760, type: 3}
+  shootMinimumPitch: 0.9
+  shootMaximumPitch: 1.1
+  enemyHitMinimumPitch: 0.5
+  enemyHitMaximumPitch: 2
 --- !u!1 &1839154481
 GameObject:
   m_ObjectHideFlags: 0
