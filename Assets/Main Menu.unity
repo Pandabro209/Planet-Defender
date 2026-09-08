@@ -2050,15 +2050,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f7db517649c5246a2703a96472046f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SFXManager
-  upgradeMenuMoveSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
-  upgradeMenuSelectSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
-  mainMenuMoveSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
-  mainMenuSelectSound: {fileID: 8300000, guid: 377ef97d0b7d18d428387e57749c2a4e, type: 3}
-  upgradeBuySound: {fileID: 8300000, guid: da8e9ac5c7253b64a86d1c9052816e5f, type: 3}
+  upgradeMenuMoveSound: {fileID: 8300000, guid: 03e441b254f8a2b4e9117c57fb18dd36, type: 3}
+  upgradeMenuSelectSound: {fileID: 8300000, guid: 03e441b254f8a2b4e9117c57fb18dd36, type: 3}
+  mainMenuMoveSound: {fileID: 8300000, guid: 03e441b254f8a2b4e9117c57fb18dd36, type: 3}
+  mainMenuSelectSound: {fileID: 8300000, guid: c445a700a6ba4ed4f95e0803c986c97f, type: 3}
+  upgradeBuySound: {fileID: 8300000, guid: 176ddff7c1b11fd4b87c10162f8e9277, type: 3}
   upgradeFailSound: {fileID: 8300000, guid: 2a5d97a5939098a43b3a108603c158c1, type: 3}
-  shootSound: {fileID: 8300000, guid: 59d1b7a7361ab494eb7f39b941cd3a61, type: 3}
-  enemyHitSound: {fileID: 8300000, guid: 5d8736f5ce126f54391fff3913ff381f, type: 3}
-  playerDeathSound: {fileID: 8300000, guid: 0bbfce111bace574996cd0ddbd77b760, type: 3}
+  shootSound: {fileID: 8300000, guid: 8f3e6597901d28f409431cdc265b3e57, type: 3}
+  enemyHitSound: {fileID: 8300000, guid: 2fcd4edf4f7505b41866c377a3dac981, type: 3}
+  playerDeathSound: {fileID: 8300000, guid: 484a8672c2c50ab489495bcbc1c3d05d, type: 3}
   shootMinimumPitch: 0.9
   shootMaximumPitch: 1.1
   enemyHitMinimumPitch: 0.5
