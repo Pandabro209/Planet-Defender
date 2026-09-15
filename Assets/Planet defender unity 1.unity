@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 328337027}
   - component: {fileID: 328337026}
   m_Layer: 0
-  m_Name: baxckdrop
+  m_Name: backdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
